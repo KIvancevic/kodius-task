@@ -40,7 +40,7 @@ function Product({ id, title, image, price, rating }) {
       alt="smart hub"
       />
 
-      <button onClick={addToBasket}>Add to Basket</button>
+      <button onClick={addToBasket} className="checkoutBtn">Add to Basket</button>
     </div>
   )
 }

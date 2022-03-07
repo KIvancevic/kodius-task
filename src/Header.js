@@ -3,7 +3,8 @@ import SearchIcon from '@mui/icons-material/Search';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import { Link } from 'react-router-dom'
 import { useStateValue } from './StateProvider';
-import { auth } from './firebase'
+import { auth } from './firebase';
+import {ReactComponent as KodiusMarketLogo} from './kodiusMarket3.svg';
 
 function Header() {
   const [{ basket, user }, dispatch] = useStateValue();
@@ -17,11 +18,7 @@ function Header() {
   return (
     <div className="header">
       <Link to="/">
-        <img 
-          className='header__logo'
-          alt='headerLogo'
-          src={require("./HeaderLogoFinal.png")}
-        />
+        <KodiusMarketLogo className='header__logo'/>
       </Link>
      
 
@@ -73,6 +70,7 @@ function Header() {
           </span>
         </div>
 
+        {user?.email ?
         <Link 
           to="/checkout"
           style={{ textDecoration: 'none' }}
@@ -84,7 +82,10 @@ function Header() {
             </span>
           </div>
         </Link>
-        
+        :
+
+        <h3 className="header__notSignedIn">Please create account and Sign in</h3>
+        }
       </div>
     </div>
   )

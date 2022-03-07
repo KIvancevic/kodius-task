@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { auth } from './firebase'
+import {ReactComponent as KodiusMarketLogo} from './kodiusMarket3.svg';
 import './Login.css'
 
 function Login() {
@@ -40,11 +41,7 @@ function Login() {
   return (
     <div className="login">
       <Link to="/">
-        <img 
-          className='login__logo'
-          src={require("./HeaderLogoFinal.png")}
-          alt="loginLogo"
-        />
+        <KodiusMarketLogo className='header__logo'/>
       </Link>
 
       <div className='login__container'>

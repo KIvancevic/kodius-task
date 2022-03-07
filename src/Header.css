@@ -9,9 +9,16 @@
 }
 
 .header__logo {
-  width: 100px;
+  width: 116px;
+  height: 163px;
   object-fit: contain;
   margin: 0 20px;
+}
+
+.header__notSignedIn {
+  margin: 0 6px;
+  max-width: 100px;
+  font-size: 12px;
 }
 
 .header__search {
